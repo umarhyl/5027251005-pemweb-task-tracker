@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker Kuliah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Tracker Kuliah</h1>
+            <p>Kelola tugas kuliahmu dengan mudah dan teratur.</p>
+        </header>
+
+        <!-- Form Tambah Tugas -->
+        <section class="task-form-section">
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Judul Tugas</label>
+                    <input type="text" id="task-title" placeholder="Contoh: Tugas Besar Pemrograman Web" minlength="3" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-course">Mata Kuliah</label>
+                        <input type="text" id="task-course" placeholder="Contoh: Struktur Data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-deadline">Deadline</label>
+                        <input type="date" id="task-deadline" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Tambah Tugas</button>
+            </form>
+        </section>
+
+        <!-- Filter & Statistik -->
+        <section class="task-controls">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="active">Aktif</button>
+                <button class="filter-btn" data-filter="completed">Selesai</button>
+            </div>
+            <div class="task-counter">
+                <span id="active-count">0</span> tugas aktif tersisa
+            </div>
+        </section>
+
+        <!-- Daftar Tugas -->
+        <section class="task-list-section">
+            <ul id="task-list">
+                <!-- Item tugas akan dirender di sini via JavaScript -->
+            </ul>
+            <div id="empty-state" class="empty-state hidden">
+                Belum ada tugas yang ditambahkan.
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
